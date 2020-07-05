@@ -1,0 +1,142 @@
+$brown_a: #3b322c;
+$brown_b: #9e938b;
+$green_a: #48e5c2;
+$green_b: #41ceae;
+$pink_a: #da4167;
+$pink_b: #c43a5c;
+
+html{
+	overflow: hidden !important;
+}
+
+body{
+	.v-tooltip__content{
+		opacity: 0.9;
+		font-size: 12px;
+		box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	}
+
+	.b-dialog{
+		text-align: right;
+		position: relative;
+		font-weight: 300;
+
+		.b-bee-info{
+			display: flex;
+			font-size: 14px;
+			flex-direction: column;
+			text-align: left;
+			position: absolute;
+			bottom: 15px;
+			left: 18px;
+			color: rgba(255, 255, 255, 0.6);
+			
+			span{
+				color: white;
+				font-size: 16px;
+				text-transform: capitalize;
+			}
+		}
+
+		.b-btn{
+			margin-right : 10px;
+		}
+	}
+}
+
+.v-btn{
+	letter-spacing: unset !important;
+}
+
+
+.b-container{
+	background: $brown_a;
+	color: $brown_a;
+	font-weight: 300;
+	min-height: 100%;
+	width: 100%;
+	padding: 10px 5px;
+	padding-left: 61px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	overflow-y: auto;
+
+	.b-tile-container{
+		min-width: 128px;
+		max-height: 250px;
+		width: calc(10% - 10px);
+		margin: 0 5px;
+		margin-bottom: 10px;
+		height: 33%;
+		border-radius: 4px;
+		flex-grow: 1;
+		will-change: background-color;
+		transition: all 0.5s ease-in-out;
+
+		&:hover{
+			transform: scale(1.02);
+			.b-chart-container .b-attack{
+				opacity: 1;
+			}
+		}
+
+		.b-chart-container{
+			height: 100%;
+			width: 100%;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.b-chart{
+				height: 90%;
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+			}
+
+			.b-attack{
+				position: absolute;
+				z-index: 1;
+				color: inherit;
+				opacity: 0;
+				font-size: 13px;
+				bottom: 10px;
+			}
+
+			.b-type{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				font-weight: 600;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+
+			.b-tile-info{
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				position: relative;
+				z-index: 1;
+
+				img{
+					width: 49px;
+    				margin: auto;
+					margin-bottom: 12px;
+				}
+
+				.b-health{
+					font-size: 30px;
+				}
+
+				.b-percentage{
+					font-size: 12.5px;
+				}
+			}
+		}
+	}
+}
+
+
