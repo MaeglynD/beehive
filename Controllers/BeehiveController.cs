@@ -67,8 +67,8 @@ namespace Beehive._1_Web_API1.Controllers
     public class Bee
     {
         public string Type { get; set; }
-        public float Health { get; set; } = 100;
-        public bool Dead { get; set; } = false;
+        public float Health { get; private set; } = 100;
+        public bool Dead { get; private set; } = false;
         public void Damage(int damage)
         {
             // Stop... they're already dead.
